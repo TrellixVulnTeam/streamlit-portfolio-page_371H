@@ -1,9 +1,9 @@
-#  pip install requests streamlit streamlit_lottie bokeh
+#  pip install requests streamlit streamlit_lottie bokeh==2.4.1
 import requests
 import streamlit as st
 from streamlit_lottie import st_lottie
 from bokeh.models.widgets import Div
-from PIL import Image
+
 
 st.set_page_config(
     page_title="🚀 Raffaels Portfolio Page 🚀",
@@ -22,13 +22,6 @@ def load_lottieurl(url):
 def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
-
-def open_link_in_new_tab(url):
-    js = "window.open(https://csharpcorner-mindcrackerinc.netdna-ssl.com/UploadFile/NewsImages/08172020000734AM/Learn-Python.png)"  # New tab or window
-    html = '<img src onerror="{}">'.format(js)
-    div = Div(text=html)
-    st.bokeh_chart(div)
 
 
 #  To get rid of the Streamlit branding stuff
@@ -121,26 +114,26 @@ with st.container():
     col1, col2, col3 = st.columns(3)
     with col1:
         st.image("https://csharpcorner-mindcrackerinc.netdna-ssl.com/UploadFile/NewsImages/08172020000734AM/Learn-Python.png")
-        st.subheader("Excel Workbook Splitter")
-        st.write("Splits large xlsx/csv files.")
+        st.subheader("Excel Row Splitter")
+        st.write("Splits large xlsx/csv files at a given row and saves it in new xlsx/csv files.")
         if st.button('Enter App', key="ews_enter"):
-            js = "window.open('https://rather.to')"  # New tab or window
+            js = "window.open('https://github.com/ratherUsefulCode')"  # New tab or window
             html = '<img src onerror="{}">'.format(js)
             div = Div(text=html)
             st.write('Web Application opens in new browser tab')
             st.bokeh_chart(div)
         if st.button('Github', key="ews_github"):
             st.write('Github opens in new browser tab')
-            js = "window.open('https://github.com/ratherUsefulCode/github-email-exposer')"  # New tab or window
+            js = "window.open('https://github.com/ratherUsefulCode/excel-row-splitter')"  # New tab or window
             html = '<img src onerror="{}">'.format(js)
             div = Div(text=html)
             st.bokeh_chart(div)
     with col2:
         st.image("https://csharpcorner-mindcrackerinc.netdna-ssl.com/UploadFile/NewsImages/08172020000734AM/Learn-Python.png")
         st.subheader("Github E-Mail Exposer")
-        st.write("Expose all E-Mail addresses of a given Github username.")
+        st.write("Expose all E-Mail addresses contributing to a given Github account.")
         if st.button('Enter App', key="gee_enter"):
-            js = "window.open('https://rather.to')"  # New tab or window
+            js = "window.open('https://github.com/ratherUsefulCode/github-email-exposer')"  # New tab or window
             html = '<img src onerror="{}">'.format(js)
             div = Div(text=html)
             st.write('Web Application opens in new browser tab')
@@ -156,41 +149,19 @@ with st.container():
         st.subheader("Crypto Currency Watchlist")
         st.write("Django web application that shows some basic data of your favourite crypto currencies.")
         if st.button('Enter App', key="ccw_enter"):
-            js = "window.open('https://rather.to')"  # New tab or window
+            js = "window.open('https://crypto-watchlist-rather-to.herokuapp.com/')"  # New tab or window
             html = '<img src onerror="{}">'.format(js)
             div = Div(text=html)
             st.write('Web Application opens in new browser tab')
             st.bokeh_chart(div)
         if st.button('Github', key="ccw_github"):
             st.write('Github opens in new browser tab')
-            js = "window.open('https://github.com/ratherUsefulCode/github-email-exposer')"  # New tab or window
+            js = "window.open('https://github.com/ratherUsefulCode/')"  # New tab or window
             html = '<img src onerror="{}">'.format(js)
             div = Div(text=html)
             st.bokeh_chart(div)
 
-with st.container():
-    col1, col2, col3, col4, col5, col6 = st.columns((1, 4, 8, 1, 2, 1))
-    with col1:
-        if st.button('Github', key="ccsw_github"):
-            st.write('Github opens in new browser tab')
-            js = "window.open('https://github.com/ratherUsefulCode/github-email-exposer')"  # New tab or window
-            html = '<img src onerror="{}">'.format(js)
-            div = Div(text=html)
-            st.bokeh_chart(div)
-    with col2:
-        st.write("button2")
-    with col3:
-        st.write("button3")
-    with col4:
-        st.write("button3")
-    with col5:
-        st.write("button3")
-    with col6:
-        st.write("button3")
 
-
-    # st.write("###")
-    # st.write("##")
 with st.container():
     col4, col5, col6 = st.columns(3)
     with col4:
@@ -228,7 +199,7 @@ with st.container():
             st.bokeh_chart(div)
             st.write('Web Application opens in new browser tab')
         if st.button('Github', key="bpw_github"):
-            js = "window.open('https://github.com/ratherUsefulCode/rather.to')"  # New tab or window
+            js = "window.open('https://github.com/ratherUsefulCode/rather-to')"  # New tab or window
             html = '<img src onerror="{}">'.format(js)
             div = Div(text=html)
             st.bokeh_chart(div)
@@ -258,14 +229,14 @@ with st.container():
     for i in range(8):
         st.write("##")
     st.write("---")
-    col1, col2, col3 = st.columns(3)
+    col1, col2 = st.columns(2)
     with col1:
         st.write(
             """
             Feel free to copy this page 👍
             """
         )
-        with col3:
-            st.markdown("<p style='text-align: right;'>Made in 2022 with ❤, 🐍 and Streamlit</p>", unsafe_allow_html=True)
+    with col2:
+        st.markdown("<p style='text-align: right;'>Made in 2022 with ❤, 🐍 and Streamlit</p>", unsafe_allow_html=True)
     st.write("---")
 
