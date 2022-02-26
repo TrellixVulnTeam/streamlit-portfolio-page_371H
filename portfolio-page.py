@@ -216,7 +216,7 @@ with st.container():
     col1, col2, col3 = st.columns(3)
     with col2:
         contact_form = """
-        <form action="https://formsubmit.co/plasmaglibber@web.de" method="POST">
+        <form action="805cc992f02da35ae356f2451ece18be" method="POST">
             <input type="hidden" name="_captcha" value="true">
             <input type="text" name="name" placeholder="Your name" required>
             <input type="email" name="email" placeholder="Your email" required>
